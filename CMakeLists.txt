@@ -78,7 +78,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
         endif ()
     endif ()
 elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -Wall -Wextra -Werror -Wno-missing-field-initializers")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -Wall -Wextra -Werror -Wno-missing-field-initializers -Wno-zero-as-null-pointer-constant")
     
     if (RAPIDJSON_BUILD_CXX11)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
