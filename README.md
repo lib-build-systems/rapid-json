@@ -22,5 +22,5 @@ Default installation paths:
   * <CMAKE_INSTALL_PREFIX>/lib/cmake/jsoncpp (.cmake, .pc) 
 
 History:
-  * Added CMakeLists.txt file for JSONcpp version 1.8.4
+  * Added CMake files for JSONcpp version 1.8.4
 
