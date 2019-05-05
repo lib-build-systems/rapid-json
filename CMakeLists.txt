@@ -142,7 +142,7 @@ if (UNIX OR CYGWIN)
                   ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc
                   @ONLY)
   install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc
-           DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/rapidjson"
+           DESTINATION lib/cmake/rapidjson
            COMPONENT pkgconfig)
 endif ()
 
@@ -178,5 +178,5 @@ configure_file(${PROJECT_NAME}ConfigVersion.cmake.in
 install(FILES
         ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
         ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
-        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/rapidjson"
+        DESTINATION lib/cmake/rapidjson
         COMPONENT dev)
