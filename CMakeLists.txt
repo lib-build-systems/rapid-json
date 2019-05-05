@@ -101,16 +101,16 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 endif ()
 
 #add extra search paths for libraries and includes
-set(INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "The directory the headers are installed in")
-set(LIB_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/lib" CACHE STRING "Directory where lib will install")
-set(DOC_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/doc/${PROJECT_NAME}" CACHE PATH "Path to the documentation")
+#set(INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "The directory the headers are installed in")
+#set(LIB_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/lib" CACHE STRING "Directory where lib will install")
+#set(DOC_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/doc/${PROJECT_NAME}" CACHE PATH "Path to the documentation")
 
-if (UNIX OR CYGWIN)
-    SET(_CMAKE_INSTALL_DIR "${LIB_INSTALL_DIR}/cmake/${PROJECT_NAME}")
-elseif (WIN32)
-    SET(_CMAKE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/cmake")
-endif ()
-set(CMAKE_INSTALL_DIR "${_CMAKE_INSTALL_DIR}" CACHE PATH "The directory cmake fiels are installed in")
+#if (UNIX OR CYGWIN)
+#    SET(_CMAKE_INSTALL_DIR "${LIB_INSTALL_DIR}/cmake/${PROJECT_NAME}")
+#elseif (WIN32)
+#    SET(_CMAKE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/cmake")
+#endif ()
+#set(CMAKE_INSTALL_DIR "${_CMAKE_INSTALL_DIR}" CACHE PATH "The directory cmake files are installed in")
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -147,15 +147,15 @@ if (UNIX OR CYGWIN)
 endif ()
 
 install(FILES readme.md
-        DESTINATION "${DOC_INSTALL_DIR}"
+        DESTINATION "${CMAKE_INSTALL_DOCDIR}"
         COMPONENT doc)
 
 install(DIRECTORY include/rapidjson
-        DESTINATION "${INCLUDE_INSTALL_DIR}"
+        DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
         COMPONENT dev)
 
 install(DIRECTORY example/
-        DESTINATION "${DOC_INSTALL_DIR}/examples"
+        DESTINATION "${CMAKE_INSTALL_DOCDIR}/examples"
         COMPONENT examples
         # Following patterns are for excluding the intermediate/object files
         # from an install of in-source CMake build.
